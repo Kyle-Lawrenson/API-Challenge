@@ -1,0 +1,17 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* .films{
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 8px;
+} */
+
+img{
+height: 300px;
+width:200px;
+}
