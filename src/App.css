@@ -12,12 +12,42 @@ cursor: pointer;
 }
 
 .modal {
-  position:fixed;
-  top:50%;
+  position:relative;
+  /* top:50%;
   left:50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   background-color: #3297CC;
   border: 3px, white, solid;
+  max-height: 70vh;
+  max-width: 70vw;
+  overflow-y: scroll;
+}
+
+.modalBg{
+display: grid;
+place-items: center;
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+backdrop-filter: blur(10px);
+}
+
+#x{
+  position: absolute;
+  top: 0;
+  right: 0;
+  }
+
+/* #close{
+
+} */
+
+.title, .release {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 #filmContainer{
@@ -26,3 +56,10 @@ cursor: pointer;
   gap:20px;
   justify-content: center;
 }
+
+#banner{
+  height:300px;
+  width:800px;
+  cursor: default;
+}
+

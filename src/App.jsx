@@ -42,11 +42,15 @@ const App = () => {
 
   const handleClick = (film) => {
     setOpen(true);
-      // console.log(film.description)
-      setSelected(film)
+    setSelected(film)
+  };
 
-      // useRef(film.description)
-      // {film.description}
+  const modalRef = useRef();
+
+  const handleClickOutside = (event) => {
+    if (modalRef.current === event.target) {
+      handleClose();
+    }
   };
 
   return (
@@ -56,20 +60,33 @@ const App = () => {
       {errorMsg !== "" && (
         <p>{errorMsg}</p>
       )}
-  <div id='filmContainer'>
-      {allFilms.map((film, index) => {
-        return (
-          <div className='films' key={index}>
-            {/* <h3 id='title'> {film.title}</h3> */}
-            <img className='img' onClick={() => handleClick(film)} src={film.image}></img>
-          </div>
-        )
-      })}
+      <div id='filmContainer'>
+        {allFilms.map((film, index) => {
+          return (
+            <div className='films' key={index}>
+              {/* <h3 id='title'> {film.title}</h3> */}
+              <img className='img' onClick={() => handleClick(film)} src={film.image}></img>
+            </div>
+          )
+        })}
       </div>
       {open && (
-        <div className='modal'>{/* add ref */}
-          <p>{selected.description}</p>
-          <button id='close' onClick={handleClose}>Close</button>
+        <div className='modalBg' ref={modalRef} onClick={handleClickOutside}>
+          <div className='modal'>{/* add ref */}
+            <img id='banner' src={selected.movie_banner}></img>
+            <div className='title'>
+              <h2>{selected.title}</h2>
+              <h2>-</h2>
+              <h2>{selected.original_title}</h2>
+            </div>
+            <div className='release'>
+              <h3>Release Date:{selected.release_date}</h3>
+              <h3>Run time:{selected.running_time} minutes.</h3>
+            </div>
+            <p>{selected.description}</p>
+            <button id='x' onClick={handleClose}>X</button>
+            <button id='close' onClick={handleClose}>Close</button>
+          </div>
         </div>
       )}
     </>
