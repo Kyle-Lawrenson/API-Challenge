@@ -53,10 +53,12 @@ const App = () => {
     }
   };
 
+  const dropDown = () => { };
+
   return (
     <>
       <h1>Studio Ghibli Films</h1>
-
+      <button id='filter' onClick={dropDown}>Filter</button>
       {errorMsg !== "" && (
         <p>{errorMsg}</p>
       )}
@@ -64,7 +66,6 @@ const App = () => {
         {allFilms.map((film, index) => {
           return (
             <div className='films' key={index}>
-              {/* <h3 id='title'> {film.title}</h3> */}
               <img className='img' onClick={() => handleClick(film)} src={film.image}></img>
             </div>
           )
@@ -72,7 +73,7 @@ const App = () => {
       </div>
       {open && (
         <div className='modalBg' ref={modalRef} onClick={handleClickOutside}>
-          <div className='modal'>{/* add ref */}
+          <div className='modal'>
             <img id='banner' src={selected.movie_banner}></img>
             <div className='title'>
               <h2>{selected.title}</h2>

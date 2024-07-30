@@ -1,8 +1,9 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+ 
   text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 img{
@@ -38,11 +39,26 @@ backdrop-filter: blur(10px);
   position: absolute;
   top: 0;
   right: 0;
+  color: red;
+  background:transparent;
+  font-weight: bold;
   }
 
-/* #close{
+  #x:hover{
+    background-color: #3296cc79;
+    
+  }
 
-} */
+#close{
+  color: red;
+  background-color: #3297CC;
+  border: 3px white solid;
+  font-weight: bold;
+}
+
+#close:hover{
+  background-color: #27749d;
+}
 
 .title, .release {
   display: flex;
@@ -59,7 +75,10 @@ backdrop-filter: blur(10px);
 
 #banner{
   height:300px;
-  width:800px;
+  width:879.5px;
   cursor: default;
 }
 
+/* #filter {
+
+} */
