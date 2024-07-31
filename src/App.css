@@ -10,6 +10,7 @@ img{
 height:300px;
 width:200px;
 cursor: pointer;
+box-shadow: rgba(0, 0, 0, 0.425) 5px 5px 15px;
 }
 
 .modal {
@@ -56,7 +57,7 @@ backdrop-filter: blur(10px);
   font-weight: bold;
 }
 
-#close:hover{
+#close:hover, #filter:hover, #ddBtns:hover{
   background-color: #27749d;
 }
 
@@ -79,6 +80,18 @@ backdrop-filter: blur(10px);
   cursor: default;
 }
 
-/* #filter {
+#dd{
+  margin-bottom:10px ;
+}
 
-} */
+#ddBtns {
+  background-color: #3297CC;
+  border: 3px white solid;
+  margin: 5px 5px 0;
+}
+
+#filter {
+  background-color: #3297CC;
+  border: 3px white solid;
+  margin-bottom: 5px;
+}
